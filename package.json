@@ -1,7 +1,6 @@
 {
   "name": "crypto-dashboard",
   "version": "0.1.0",
-    "homepage" : "http://piysuhmehta.me/DashCrypt",
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.2",
