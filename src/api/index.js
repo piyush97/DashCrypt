@@ -1,4 +1,4 @@
-const baseUrl = 'https://api.coinmarketcap.com/v1'
+const baseURL = 'https://api.coinmarketcap.com/v1'
 
 export function getListings() {
   console.log('0. calling getListings...')
