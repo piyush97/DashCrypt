@@ -15,7 +15,7 @@ class DashboardContainer extends Component {
     this.state = {
       listings: [],
       ticker: [],
-      global: []
+      global: null
     }
   }
 
@@ -48,7 +48,7 @@ class DashboardContainer extends Component {
 
     api.getGlobal()
     .then(response => this.setState({
-      global: Object.values(response) //converting object into array
+      global: { ...response.data }
     }))
     console.log('step 2, setting state with responses from API call promises...')
   }
@@ -74,19 +74,19 @@ class DashboardContainer extends Component {
 
         <Index
           ticker={this.state.ticker[0]}
-          global={this.state.global[1]}
+          global={this.state.global}
         />
 
         <PieCharts
           scrollToTop={this.scrollToTop.bind(this)}
           ticker={this.state.ticker[0]}
-          global={this.state.global[1]}
+          global={this.state.global}
         />
 
         <ShowTicker
           scrollToTop={this.scrollToTop.bind(this)}
           ticker={this.state.ticker[0]}
-          global={this.state.global[1]}
+          global={this.state.global}
         />
 
       </div>
