@@ -157,8 +157,7 @@ class PieCharts extends Component {
                     <br></br>
 
                     <div>
-                      {console.log(globalData)}
-                      Total cryptocurrency market cap (USD): ${globalData && globalData.quotes ? globalData.quotes.USD.total_market_cap.toLocaleString() : "shrug"}
+                      Total cryptocurrency market cap (USD): ${globalData ? globalData.quotes.USD.total_market_cap.toLocaleString() : "shrug"}
                     </div>
 
                     <br></br>
