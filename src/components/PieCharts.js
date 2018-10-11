@@ -40,7 +40,7 @@ class PieCharts extends Component {
       // var pieChartDataFirstTwenty = pieChartData.slice(0, 20)
       var pieChartDataTopTen = pieChartDataTopOneHundred.slice(0, 10)
 
-      var totalMarketCapArray = ["Total Market Cap", globalData.quotes.USD.total_market_cap]
+      var totalMarketCapArray = ["Total Market Cap", globalData.quotes ? globalData.quotes.USD.total_market_cap : null];
 
       var pieChartDataTotalMarketCap = [
         [tickerArray[0].name, tickerArray[0].quotes.USD.market_cap],
@@ -157,7 +157,8 @@ class PieCharts extends Component {
                     <br></br>
 
                     <div>
-                      Total cryptocurrency market cap (USD): ${globalData ? globalData.quotes.USD.total_market_cap.toLocaleString() : "shrug"}
+                      {console.log(globalData)}
+                      Total cryptocurrency market cap (USD): ${globalData && globalData.quotes ? globalData.quotes.USD.total_market_cap.toLocaleString() : "shrug"}
                     </div>
 
                     <br></br>
